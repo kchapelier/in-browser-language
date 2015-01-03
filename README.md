@@ -8,10 +8,11 @@ This module is designed to be used with browserify or other CJS bundlers.
 
 The module checks for (in order) :
 
-* `window.navigator.language`
 * `window.navigator.languages`
-* `window.clientInformation.browserLanguage`
+* `window.navigator.language`
 * `window.clientInformation.userLanguage`
+* `window.clientInformation.browserLanguage`
+* `window.clientInformation.systemLanguage`
 
 Some systems / browser may actually return the language of the OS instead of the language of the browser.
 
