@@ -3,12 +3,13 @@
 var uniq = require('uniq'),
     navigator = window.navigator || window.clientInformation || {};
 
-var list = function () {
+var list = function list () {
     var languages = [].concat(
-        navigator.language,
         navigator.languages,
+        navigator.language,
+        navigator.userLanguage,
         navigator.browserLanguage,
-        navigator.userLanguage
+        navigator.systemLanguage
     ).filter(function (language) {
         return language;
     }).map(function (language) {
@@ -18,7 +19,13 @@ var list = function () {
     return uniq(languages, null, true);
 };
 
-var pick = function (proposedLanguages, defaultLanguage) {
+var first = function first () {
+    var languages = list();
+
+    return languages.length ? languages[0] : null;
+};
+
+var pick = function pick (proposedLanguages, defaultLanguage) {
     var languages = list(),
         result = null,
         i;
@@ -39,6 +46,7 @@ var pick = function (proposedLanguages, defaultLanguage) {
 };
 
 module.exports = {
+    first : first,
     list : list,
     pick : pick
 };

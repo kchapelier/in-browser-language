@@ -21,7 +21,11 @@ There is no way around this issue but it can be mitigated by allowing the user t
 
 **list()**
 
-Return of the languages.
+Return an array containing the languages.
+
+**first()**
+
+Return the first language of the list.
 
 **pick(proposedLanguages, defaultLanguage)**
 
@@ -34,6 +38,9 @@ var browserLanguage = require('in-browser-language');
 
 console.log(browserLanguage.list());
 // returns ['fr', 'en']
+
+console.log(browserLanguage.first());
+// returns 'fr'
 
 console.log(browserLanguage.pick(['pl', 'ja', 'en', 'fr']));
 // returns 'fr' as 'fr' is the first declared by the browser
