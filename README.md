@@ -53,3 +53,8 @@ console.log(browserLanguage.pick(['pl', 'ja']));
 // returns null as there are no matches and no defaultLanguage
 ```
 
+## History
+
+### 1.0.3 (2018-09-18)
+
+ * Remove `uniq` dependency.

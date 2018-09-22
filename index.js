@@ -1,22 +1,33 @@
 "use strict";
 
-var uniq = require('uniq'),
-    navigator = window.navigator || window.clientInformation || {};
-
 var list = function list () {
+    var navigator = window.navigator || window.clientInformation || {};
+
     var languages = [].concat(
         navigator.languages,
         navigator.language,
         navigator.userLanguage,
         navigator.browserLanguage,
         navigator.systemLanguage
-    ).filter(function (language) {
-        return language;
-    }).map(function (language) {
-        return language.replace(/-.*/,'').toLowerCase();
-    });
+    );
 
-    return uniq(languages, null, true);
+    var results = [],
+        language,
+        i;
+
+    for(i = 0; i < languages.length; i++) {
+        language = languages[i];
+
+        if (
+            language && 
+            (language = language.replace(/-.*/,'').toLowerCase()) && 
+            results.indexOf(language) === -1
+        ) {
+            results.push(language);
+        }
+    }
+
+    return results;
 };
 
 var first = function first () {

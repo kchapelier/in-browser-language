@@ -1,6 +1,6 @@
 {
   "name": "in-browser-language",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Get the language of the browser",
   "homepage": "https://github.com/kchapelier/in-browser-language",
   "main": "index.js",
@@ -9,13 +9,12 @@
   },
   "keywords": [
     "browser",
-    "language"
+    "language",
+    "detection"
   ],
-  "author": "Kevin Chapeliers",
+  "author": "Kevin Chapelier",
   "license": "MIT",
-  "dependencies": {
-    "uniq": "^1.0.1"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/kchapelier/in-browser-language.git"
