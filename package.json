@@ -4,6 +4,7 @@
   "description": "Get the language of the browser",
   "homepage": "https://github.com/kchapelier/in-browser-language",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
